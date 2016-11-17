@@ -14,6 +14,22 @@ AUI.add(
 				NAME: 'liferay-ddm-form-field-time',
 
 				prototype: {
+
+					render: function() {
+						var instance = this;
+
+						TimeField.superclass.render.apply(instance, arguments);
+
+						instance._timePicker = new A.TimePicker(
+							{
+								trigger: instance.getInputSelector(),
+								popover: {
+									zIndex: 1
+								}
+							}
+						);
+					}
+
 				}
 			}
 		);
@@ -22,6 +38,6 @@ AUI.add(
 	},
 	'',
 	{
-		requires: ['liferay-ddm-form-renderer-field']
+		requires: ['aui-timepicker', 'liferay-ddm-form-renderer-field']
 	}
 );
