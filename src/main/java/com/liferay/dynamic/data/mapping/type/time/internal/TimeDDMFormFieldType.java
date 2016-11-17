@@ -16,6 +16,7 @@ package com.liferay.dynamic.data.mapping.type.time.internal;
 
 import com.liferay.dynamic.data.mapping.form.field.type.BaseDDMFormFieldType;
 import com.liferay.dynamic.data.mapping.form.field.type.DDMFormFieldType;
+import com.liferay.dynamic.data.mapping.form.field.type.DDMFormFieldTypeSettings;
 
 import org.osgi.service.component.annotations.Component;
 
@@ -35,6 +36,13 @@ import org.osgi.service.component.annotations.Component;
 	service = DDMFormFieldType.class
 )
 public class TimeDDMFormFieldType extends BaseDDMFormFieldType {
+
+	@Override
+	public Class<? extends DDMFormFieldTypeSettings>
+		getDDMFormFieldTypeSettings() {
+
+		return TimeDDMFormFieldTypeSettings.class;
+	}
 
 	@Override
 	public String getName() {

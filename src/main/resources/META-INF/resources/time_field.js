@@ -4,6 +4,10 @@ AUI.add(
 		var TimeField = A.Component.create(
 			{
 				ATTRS: {
+					mask: {
+						value: '%I:%M %p'
+					},
+
 					type: {
 						value: 'time'
 					}
@@ -23,6 +27,7 @@ AUI.add(
 						instance._timePicker = new A.TimePicker(
 							{
 								trigger: instance.getInputSelector(),
+								mask: instance.get('mask'),
 								popover: {
 									zIndex: 1
 								}
