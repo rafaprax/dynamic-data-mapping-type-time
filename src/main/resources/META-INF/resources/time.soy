@@ -5,6 +5,7 @@
  *
  * @param label
  * @param name
+ * @param placeholder
  * @param readOnly
  * @param required
  * @param showLabel
@@ -27,6 +28,6 @@
 			{/if}
 		{/if}
 
-		<input class="field form-control" id="{$name}" name="{$name}" {if $readOnly}readonly{/if} type="text" value="{$value}">
+		<input class="field form-control" id="{$name}" name="{$name}" placeholder="{$placeholder}" {if $readOnly}readonly{/if} type="text" value="{$value}">
 	</div>
 {/template}

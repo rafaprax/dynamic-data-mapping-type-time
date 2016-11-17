@@ -36,7 +36,7 @@ import com.liferay.dynamic.data.mapping.form.field.type.DefaultDDMFormFieldTypeS
 					{
 						@DDMFormLayoutColumn(
 							size = 12,
-							value = {"label", "required", "tip", "mask"}
+							value = {"label", "required", "tip", "mask", "placeholder"}
 						)
 					}
 				)
@@ -67,5 +67,8 @@ public interface TimeDDMFormFieldTypeSettings
 
 	@DDMFormField(label = "%mask")
 	public String mask();
+
+	@DDMFormField(label = "%placeholder")
+	public String placeholder();
 
 }

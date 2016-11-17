@@ -8,6 +8,10 @@ AUI.add(
 						value: '%I:%M %p'
 					},
 
+					placeholder: {
+						value: ''
+					},
+
 					type: {
 						value: 'time'
 					}
@@ -18,6 +22,17 @@ AUI.add(
 				NAME: 'liferay-ddm-form-field-time',
 
 				prototype: {
+
+					getTemplateContext: function() {
+						var instance = this;
+
+						return A.merge(
+							TimeField.superclass.getTemplateContext.apply(instance, arguments),
+							{
+								placeholder: instance.get('placeholder')
+							}
+						);
+					},
 
 					render: function() {
 						var instance = this;

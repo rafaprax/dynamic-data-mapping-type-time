@@ -16,6 +16,9 @@ package com.liferay.dynamic.data.mapping.type.time.internal;
 
 import com.liferay.dynamic.data.mapping.form.field.type.BaseDDMFormFieldRenderer;
 import com.liferay.dynamic.data.mapping.form.field.type.DDMFormFieldRenderer;
+import com.liferay.dynamic.data.mapping.model.DDMFormField;
+import com.liferay.dynamic.data.mapping.render.DDMFormFieldRenderingContext;
+import com.liferay.portal.kernel.template.Template;
 import com.liferay.portal.kernel.template.TemplateConstants;
 import com.liferay.portal.kernel.template.TemplateResource;
 
@@ -51,6 +54,15 @@ public class TimeDDMFormFieldRenderer extends BaseDDMFormFieldRenderer {
 	@Activate
 	protected void activate(Map<String, Object> properties) {
 		_templateResource = getTemplateResource("/META-INF/resources/time.soy");
+	}
+
+	@Override
+	protected void populateOptionalContext(
+		Template template, DDMFormField ddmFormField,
+		DDMFormFieldRenderingContext ddmFormFieldRenderingContext) {
+
+		template.put(
+			"placeholder", (String)ddmFormField.getProperty("placeholder"));
 	}
 
 	private TemplateResource _templateResource;
