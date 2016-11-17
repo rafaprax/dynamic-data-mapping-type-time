@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Liferay Dynamic Data Mapping Type Time
+Bundle-SymbolicName: com.liferay.dynamic.data.mapping.type.time
+Bundle-Version: 1.0.0
+Created-By: 1.8.0_91 (Oracle Corporation)
+Import-Package: com.liferay.dynamic.data.mapping.form.field.type;versi
+ on="[1.0,2)",com.liferay.portal.kernel.template;version="[7.0,8)"
+Javac-Debug: on
+Javac-Deprecation: off
+Javac-Encoding: UTF-8
+Liferay-JS-Config: /META-INF/resources/config.js
+Private-Package: com.liferay.dynamic.data.mapping.type.time.internal,c
+ ontent
+Provide-Capability: osgi.service;objectClass:List<String>="com.liferay
+ .dynamic.data.mapping.form.field.type.DDMFormFieldRenderer",osgi.serv
+ ice;objectClass:List<String>="com.liferay.dynamic.data.mapping.form.f
+ ield.type.DDMFormFieldType",liferay.resource.bundle;bundle.symbolic.n
+ ame="com.liferay.dynamic.data.mapping.type.time";resource.bundle.base
+ .name="content.Language"
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+Service-Component: OSGI-INF/com.liferay.dynamic.data.mapping.type.time
+ .internal.TimeDDMFormFieldRenderer.xml,OSGI-INF/com.liferay.dynamic.d
+ ata.mapping.type.time.internal.TimeDDMFormFieldType.xml
+Tool: Bnd-3.2.0.201605172007
+Web-ContextPath: /dynamic-data-mapping-type-time
