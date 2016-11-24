@@ -65,7 +65,7 @@ import com.liferay.dynamic.data.mapping.form.field.type.DefaultDDMFormFieldTypeS
 public interface TimeDDMFormFieldTypeSettings
 	extends DefaultDDMFormFieldTypeSettings {
 
-	@DDMFormField(label = "%mask")
+	@DDMFormField(label = "%mask", predefinedValue="%I:%M %p")
 	public String mask();
 
 	@DDMFormField(label = "%placeholder")
